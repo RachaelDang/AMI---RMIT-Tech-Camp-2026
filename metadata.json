@@ -1,0 +1,6 @@
+{
+  "name": "AMI",
+  "description": "An Emotional Communication Companion that helps autistic children express feelings, identify triggers, communicate needs, and foster understanding between families and educators.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

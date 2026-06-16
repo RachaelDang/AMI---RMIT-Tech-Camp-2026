@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #FAF8F4; /* Ultra-soft premium warm white */
+    color: #171717; /* Deep rich ink (neutral-900 style) */
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Premium Apple & Headspace styled glassmorphism */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.dark-glass-panel {
+  background: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Linear/Stripe inspired premium glow effects */
+.glow-card-sky:hover {
+  box-shadow: 0 20px 40px -10px rgba(14, 165, 233, 0.12), 0 0 0 1px rgba(14, 165, 233, 0.2);
+  transform: translateY(-2px);
+}
+
+.glow-card-mint:hover {
+  box-shadow: 0 20px 40px -10px rgba(16, 185, 129, 0.12), 0 0 0 1px rgba(16, 185, 129, 0.2);
+  transform: translateY(-2px);
+}
+
+.glow-card-lavender:hover {
+  box-shadow: 0 20px 40px -10px rgba(168, 85, 247, 0.12), 0 0 0 1px rgba(168, 85, 247, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Custom premium thin scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Elegant breathing wave keyframes */
+@keyframes bloomPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.3;
+  }
+}
+
+.animate-bloom-slow {
+  animation: bloomPulse 10s ease-in-out infinite;
+}
+
+@keyframes breatheLoop {
+  0%, 100% {
+    transform: scale(1) translateZ(0);
+    box-shadow: 0 0 40px 0px rgba(14, 165, 233, 0.2);
+  }
+  50% {
+    transform: scale(1.15) translateZ(0);
+    box-shadow: 0 0 70px 15px rgba(168, 85, 247, 0.25);
+  }
+}
+
+.breathing-ring {
+  animation: breatheLoop 8s ease-in-out infinite;
+}
+
